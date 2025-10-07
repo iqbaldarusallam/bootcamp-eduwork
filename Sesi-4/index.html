@@ -2,14 +2,14 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Iqbal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iqbal Darusallam - Web Developer</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link
@@ -20,11 +20,11 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top"
-    >
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
       <div class="container">
-        <a class="navbar-brand fw-bold fs-4" href="#">Iqbal</a>
+        <a class="navbar-brand fw-bold" href="#">
+          WEB<span class="text-accent">Dev</span>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -34,145 +34,232 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto fw-semibold">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#header">Header</a>
+              <a class="nav-link active" href="#header">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">Biodata</a>
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quotes">Quotes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Header -->
+    <!-- Hero Section -->
     <section
       id="header"
-      class="py-5 bg-light min-vh-100 d-flex align-items-center"
+      class="hero d-flex justify-content-center align-items-center text-center text-white"
     >
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center text-md-start">
-            <h1 class="text-primary display-6 fw-bold">
-              Welcome to my profile
-            </h1>
-            <p class="lead">
-              Halo! Saya <b>Iqbal Darusallam</b>, seorang mahasiswa Sistem
-              Informasi yang tertarik pada pengembangan web dan teknologi.
-            </p>
-            <!-- Tombol Modal -->
-            <button
-              class="btn btn-primary btn-lg shadow-sm"
-              data-bs-toggle="modal"
-              data-bs-target="#infoModal"
-            >
-              Pelajari Lebih Lanjut
-            </button>
+        <img
+          src="Profile-foto.jpg"
+          alt="Profile"
+          class="img-fluid rounded-circle shadow-lg profile-img"
+        />
+        <h1 class="fw-bold mt-4">
+          Hi, I’m <span class="text-accent">Iqbal Darusallam</span>
+        </h1>
+        <p class="lead">Web Developer | System Information</p>
+        <a href="#contact" class="btn btn-accent mt-3">Hire Me</a>
+        <a
+          href="CV-Iqbal.pdf"
+          target="_blank"
+          class="btn btn-outline-light mt-3"
+          >Download CV</a
+        >
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 text-center">
+      <div class="container">
+        <h2 class="fw-bold mb-3">About Me</h2>
+        <p class="mb-4">
+          Saya seorang Web Developer yang sedang mengembangkan kemampuan dalam
+          membangun aplikasi web modern. Fokus saya pada pembuatan sistem
+          manajemen, e-commerce, dan eksplorasi integrasi AI untuk menciptakan
+          solusi digital yang inovatif. Saya antusias belajar, beradaptasi
+          cepat, dan selalu siap menghadapi tantangan baru dalam pengembangan
+          teknologi
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light text-center">
+      <div class="container">
+        <h2 class="fw-bold mb-4">My Skills</h2>
+        <div class="row g-4">
+          <div class="col-md-3"><div class="skill-box">HTML & CSS</div></div>
+          <div class="col-md-3"><div class="skill-box">JavaScript</div></div>
+          <div class="col-md-3"><div class="skill-box">PHP & MySQL</div></div>
+          <div class="col-md-3">
+            <div class="skill-box">Bootstrap / Tailwind</div>
           </div>
-          <div class="col-md-6 text-center mt-4 mt-md-0">
-            <img
-              src="Profile-foto.jpg"
-              alt="Profile"
-              class="img-fluid rounded-circle shadow-lg profile-img"
-            />
+          <div class="col-md-3"><div class="skill-box">React.js</div></div>
+          <div class="col-md-3"><div class="skill-box">Node.js</div></div>
+          <div class="col-md-3"><div class="skill-box">Laravel</div></div>
+          <div class="col-md-3">
+            <div class="skill-box">AI Integration</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Me -->
-    <section id="about" class="py-5 bg-secondary bg-opacity-10">
-      <div class="container text-center">
-        <h2 class="fw-bold text-primary mb-4">About Me</h2>
-        <p class="text-muted mb-5">Informasi singkat tentang saya</p>
-        <div class="row g-4 justify-content-center">
-          <div class="col-sm-6 col-lg-4">
-            <div class="card about-card shadow-sm p-4 h-100">
-              <i class="bi bi-person-circle text-primary fs-1 mb-3"></i>
-              <h5 class="fw-bold">Nama</h5>
-              <p class="mb-0">Iqbal Darusallam</p>
+    <!-- Quotes -->
+    <section
+      id="quotes"
+      class="py-5 d-flex align-items-center text-center text-white"
+    >
+      <div class="container">
+        <h2 class="fw-bold mb-4">Inspirational Quotes</h2>
+        <div
+          id="quotesCarousel"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+          data-bs-interval="4000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="quote-box p-5 rounded shadow mx-auto">
+                <blockquote class="blockquote mb-0">
+                  <p>"Talk is cheap. Show me the code."</p>
+                  <footer class="blockquote-footer text-white-50">
+                    Linus Torvalds
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="quote-box p-5 rounded shadow mx-auto">
+                <blockquote class="blockquote mb-0">
+                  <p>"The best way to predict the future is to invent it."</p>
+                  <footer class="blockquote-footer text-white-50">
+                    Alan Kay
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="quote-box p-5 rounded shadow mx-auto">
+                <blockquote class="blockquote mb-0">
+                  <p>
+                    "Programs must be written for people to read, and only
+                    incidentally for machines to execute."
+                  </p>
+                  <footer class="blockquote-footer text-white-50">
+                    Harold Abelson
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="quote-box p-5 rounded shadow mx-auto">
+                <blockquote class="blockquote mb-0">
+                  <p>"First, solve the problem. Then, write the code."</p>
+                  <footer class="blockquote-footer text-white-50">
+                    John Johnson
+                  </footer>
+                </blockquote>
+              </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="card about-card shadow-sm p-4 h-100">
-              <i class="bi bi-mortarboard text-primary fs-1 mb-3"></i>
-              <h5 class="fw-bold">Pendidikan</h5>
-              <p class="mb-0">S1 Sistem Informasi</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="card about-card shadow-sm p-4 h-100">
-              <i class="bi bi-briefcase text-primary fs-1 mb-3"></i>
-              <h5 class="fw-bold">Pekerjaan</h5>
-              <p class="mb-0">Mahasiswa</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="card about-card shadow-sm p-4 h-100">
-              <i class="bi bi-geo-alt text-primary fs-1 mb-3"></i>
-              <h5 class="fw-bold">Alamat</h5>
-              <p class="mb-0">Bekasi</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="card about-card shadow-sm p-4 h-100">
-              <i class="bi bi-telephone text-primary fs-1 mb-3"></i>
-              <h5 class="fw-bold">Kontak</h5>
-              <p class="mb-0">+62 857 7381 5355</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="card about-card shadow-sm p-4 h-100">
-              <i class="bi bi-heart text-primary fs-1 mb-3"></i>
-              <h5 class="fw-bold">Hobi</h5>
-              <p class="mb-0">Futsal</p>
-            </div>
-          </div>
+
+          <!-- Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#quotesCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#quotesCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="py-5">
-      <div class="container text-center">
-        <h2 class="fw-bold text-primary mb-4">Portfolio</h2>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5 text-center">
+      <div class="container">
+        <h2 class="fw-bold mb-4">Portfolio</h2>
         <div class="row g-4">
           <div class="col-md-4">
-            <div class="card portfolio-card shadow-sm h-100">
-              <div class="img-wrapper">
-                <img src="proyek-1.png" class="card-img-top" alt="Proyek 1" />
-              </div>
+            <div class="card shadow h-100 portfolio-card">
+              <img src="proyek-1.png" class="card-img-top" alt="Project 1" />
               <div class="card-body">
-                <h5 class="card-title fw-bold">Proyek 1</h5>
-                <p class="card-text">Hospital Management System</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card portfolio-card shadow-sm h-100">
-              <div class="img-wrapper">
-                <img src="proyek-2.png" class="card-img-top" alt="Proyek 2" />
-              </div>
-              <div class="card-body">
-                <h5 class="card-title fw-bold">Proyek 2</h5>
-                <p class="card-text">Inventory Management System</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card portfolio-card shadow-sm h-100">
-              <div class="img-wrapper">
-                <img src="proyek-3.png" class="card-img-top" alt="Proyek 3" />
-              </div>
-              <div class="card-body">
-                <h5 class="card-title fw-bold">Proyek 3</h5>
+                <h5 class="card-title">Hospital Management System</h5>
                 <p class="card-text">
-                  Furninest - E-commerce Website with AI Chatbot
+                  Sistem manajemen rumah sakit dengan fitur rekam medis.
                 </p>
+                <button
+                  class="btn btn-sm btn-accent"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalProject1"
+                >
+                  Detail Project
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card shadow h-100 portfolio-card">
+              <img src="proyek-2.png" class="card-img-top" alt="Project 2" />
+              <div class="card-body">
+                <h5 class="card-title">Inventory Management System</h5>
+                <p class="card-text">
+                  Sistem stok otomatis dengan transaksi realtime.
+                </p>
+                <button
+                  class="btn btn-sm btn-accent"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalProject2"
+                >
+                  Detail Project
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card shadow h-100 portfolio-card">
+              <img src="proyek-3.png" class="card-img-top" alt="Project 3" />
+              <div class="card-body">
+                <h5 class="card-title">E-commerce with AI Chatbot</h5>
+                <p class="card-text">
+                  Website toko online modern dengan chatbot AI.
+                </p>
+                <button
+                  class="btn btn-sm btn-accent"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalProject3"
+                >
+                  Detail Project
+                </button>
               </div>
             </div>
           </div>
@@ -180,34 +267,78 @@
       </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal fade" id="infoModal" tabindex="-1">
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light text-center">
+      <div class="container">
+        <h2 class="fw-bold mb-4">Contact Me</h2>
+        <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
+          <span
+            ><i class="bi bi-instagram text-accent me-2"></i
+            >@iqbaldarusallam10</span
+          >
+          <span
+            ><i class="bi bi-envelope-fill text-accent me-2"></i
+            >iqbaldarusallam@gmail.com</span
+          >
+          <span><i class="bi bi-geo-alt-fill text-accent me-2"></i>Bekasi</span>
+        </div>
+        <a href="mailto:iqbaldarusallam@gmail.com" class="btn btn-accent">
+          <i class="bi bi-send-fill me-1"></i> Send Email
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 text-center text-white">
+      <p class="mb-0">&copy; 2025 Iqbal Darusallam | Web Developer</p>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal fade" id="modalProject1" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header bg-primary text-white">
-            <h5 class="modal-title">Tentang Saya</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p>
-              Saya adalah mahasiswa Sistem Informasi dengan ketertarikan pada
-              pengembangan aplikasi web, AI, dan teknologi modern. Saya sedang
-              mengembangkan beberapa proyek seperti Hospital Management System,
-              Inventory System, dan E-commerce berbasis AI Chatbot.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" data-bs-dismiss="modal">
-              Tutup
-            </button>
-          </div>
+        <div class="modal-content p-4">
+          <h5 class="fw-bold">Hospital Management System</h5>
+          <p>
+            <strong>Teknologi:</strong> HTML, CSS, JS, PHP, MySQL, Bootstrap
+          </p>
+          <p>
+            Sistem rumah sakit dengan fitur rekam medis digital, manajemen
+            dokter & pasien.
+          </p>
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="modal fade" id="modalProject2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+          <h5 class="fw-bold">Inventory Management System</h5>
+          <p>
+            <strong>Teknologi:</strong> HTML, CSS, JS, PHP, MySQL, Bootstrap
+          </p>
+          <p>
+            Sistem stok otomatis realtime dengan pencatatan transaksi
+            masuk/keluar barang.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalProject3" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+          <h5 class="fw-bold">E-commerce with AI Chatbot</h5>
+          <p>
+            <strong>Teknologi:</strong> Tailwind CSS, React, Node.js, AI API /
+            IBM Granite
+          </p>
+          <p>
+            E-commerce modern dengan integrasi chatbot AI untuk customer support
+            otomatis.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
