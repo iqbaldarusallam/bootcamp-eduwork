@@ -8,6 +8,7 @@ body {
 .text-accent {
   color: #ff4d6d;
 }
+
 .btn-accent {
   background: #ff4d6d;
   color: #fff;
@@ -36,9 +37,6 @@ body {
   background: linear-gradient(135deg, #1d2671, #c33764);
   min-height: 100vh;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .hero h1 {
   font-size: 3rem;
@@ -68,7 +66,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* Portfolio */
 .portfolio-card {
   border-radius: 15px;
   overflow: hidden;
@@ -83,7 +80,25 @@ body {
   object-fit: cover;
 }
 
-/* Footer */
 footer {
   background: linear-gradient(90deg, #1d2671, #c33764);
+}
+
+#quotes {
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.quote-box {
+  background: rgba(0, 0, 0, 0.5);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#quotes blockquote p {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #fff;
 }

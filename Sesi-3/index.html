@@ -16,14 +16,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     />
-
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">
-          Iqbal<span class="text-accent">Dev</span>
+          WEB<span class="text-accent">Dev</span>
         </a>
         <button
           class="navbar-toggler"
@@ -45,6 +45,9 @@
               <a class="nav-link" href="#skills">Skills</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#quotes">Quotes</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
@@ -55,9 +58,12 @@
       </div>
     </nav>
 
-    <!-- Hero -->
-    <section id="header" class="hero d-flex align-items-center">
-      <div class="container text-center">
+    <!-- Hero Section -->
+    <section
+      id="header"
+      class="hero d-flex justify-content-center align-items-center text-center text-white"
+    >
+      <div class="container">
         <img
           src="Profile-foto.jpg"
           alt="Profile"
@@ -77,23 +83,22 @@
       </div>
     </section>
 
-    <!-- About -->
+    <!-- About Section -->
     <section id="about" class="py-5 text-center">
       <div class="container">
         <h2 class="fw-bold mb-3">About Me</h2>
         <p class="mb-4">
-          Saya seorang Web Developer dengan latar belakang Sistem Informasi,
-          berfokus pada pengembangan aplikasi berbasis web modern.
-          Berpengalamanmembangun sistem manajemen, e-commerce, dan integrasi AI
-          chatbot, saya terbiasa mengolah ide menjadi solusi digital yang
-          fungsional dan user-friendly. Passion saya adalah menciptakan
-          teknologi yang bukan hanya berjalan dengan baik, tetapi juga
-          memberikan dampak nyata bagi pengguna dan bisnis.
+          Saya seorang Web Developer yang sedang mengembangkan kemampuan dalam
+          membangun aplikasi web modern. Fokus saya pada pembuatan sistem
+          manajemen, e-commerce, dan eksplorasi integrasi AI untuk menciptakan
+          solusi digital yang inovatif. Saya antusias belajar, beradaptasi
+          cepat, dan selalu siap menghadapi tantangan baru dalam pengembangan
+          teknologi
         </p>
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills Section -->
     <section id="skills" class="py-5 bg-light text-center">
       <div class="container">
         <h2 class="fw-bold mb-4">My Skills</h2>
@@ -114,7 +119,90 @@
       </div>
     </section>
 
-    <!-- Portfolio -->
+    <!-- Quotes -->
+    <section
+      id="quotes"
+      class="py-5 d-flex align-items-center text-center text-white"
+    >
+      <div class="container">
+        <h2 class="fw-bold mb-4">Inspirational Quotes</h2>
+        <div
+          id="quotesCarousel"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+          data-bs-interval="4000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="quote-box p-5 rounded shadow mx-auto">
+                <blockquote class="blockquote mb-0">
+                  <p>"Talk is cheap. Show me the code."</p>
+                  <footer class="blockquote-footer text-white-50">
+                    Linus Torvalds
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="quote-box p-5 rounded shadow mx-auto">
+                <blockquote class="blockquote mb-0">
+                  <p>"The best way to predict the future is to invent it."</p>
+                  <footer class="blockquote-footer text-white-50">
+                    Alan Kay
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="quote-box p-5 rounded shadow mx-auto">
+                <blockquote class="blockquote mb-0">
+                  <p>
+                    "Programs must be written for people to read, and only
+                    incidentally for machines to execute."
+                  </p>
+                  <footer class="blockquote-footer text-white-50">
+                    Harold Abelson
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="quote-box p-5 rounded shadow mx-auto">
+                <blockquote class="blockquote mb-0">
+                  <p>"First, solve the problem. Then, write the code."</p>
+                  <footer class="blockquote-footer text-white-50">
+                    John Johnson
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#quotesCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#quotesCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
     <section id="portfolio" class="py-5 text-center">
       <div class="container">
         <h2 class="fw-bold mb-4">Portfolio</h2>
@@ -125,13 +213,19 @@
               <div class="card-body">
                 <h5 class="card-title">Hospital Management System</h5>
                 <p class="card-text">
-                  Sistem manajemen rumah sakit dengan fitur rekam medis, dokter,
-                  dan pasien.
+                  Sistem manajemen rumah sakit dengan fitur rekam medis.
                 </p>
-                <a href="#" class="btn btn-sm btn-accent">View Project</a>
+                <button
+                  class="btn btn-sm btn-accent"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalProject1"
+                >
+                  Detail Project
+                </button>
               </div>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="card shadow h-100 portfolio-card">
               <img src="proyek-2.png" class="card-img-top" alt="Project 2" />
@@ -140,20 +234,32 @@
                 <p class="card-text">
                   Sistem stok otomatis dengan transaksi realtime.
                 </p>
-                <a href="#" class="btn btn-sm btn-accent">View Project</a>
+                <button
+                  class="btn btn-sm btn-accent"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalProject2"
+                >
+                  Detail Project
+                </button>
               </div>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="card shadow h-100 portfolio-card">
               <img src="proyek-3.png" class="card-img-top" alt="Project 3" />
               <div class="card-body">
                 <h5 class="card-title">E-commerce with AI Chatbot</h5>
                 <p class="card-text">
-                  Website toko online modern dengan chatbot AI untuk customer
-                  service.
+                  Website toko online modern dengan chatbot AI.
                 </p>
-                <a href="#" class="btn btn-sm btn-accent">View Project</a>
+                <button
+                  class="btn btn-sm btn-accent"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalProject3"
+                >
+                  Detail Project
+                </button>
               </div>
             </div>
           </div>
@@ -161,22 +267,20 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="py-5 bg-light text-center">
       <div class="container">
         <h2 class="fw-bold mb-4">Contact Me</h2>
         <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
           <span
-            ><i class="bi bi-instagram text-accent me-2"></i>
-            @iqbaldarusallam10</span
+            ><i class="bi bi-instagram text-accent me-2"></i
+            >@iqbaldarusallam10</span
           >
           <span
-            ><i class="bi bi-envelope-fill text-accent me-2"></i>
-            iqbaldarusallam@gmail.com</span
+            ><i class="bi bi-envelope-fill text-accent me-2"></i
+            >iqbaldarusallam@gmail.com</span
           >
-          <span
-            ><i class="bi bi-geo-alt-fill text-accent me-2"></i> Bekasi</span
-          >
+          <span><i class="bi bi-geo-alt-fill text-accent me-2"></i>Bekasi</span>
         </div>
         <a href="mailto:iqbaldarusallam@gmail.com" class="btn btn-accent">
           <i class="bi bi-send-fill me-1"></i> Send Email
@@ -188,6 +292,53 @@
     <footer class="py-3 text-center text-white">
       <p class="mb-0">&copy; 2025 Iqbal Darusallam | Web Developer</p>
     </footer>
+
+    <!-- Modals -->
+    <div class="modal fade" id="modalProject1" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+          <h5 class="fw-bold">Hospital Management System</h5>
+          <p>
+            <strong>Teknologi:</strong> HTML, CSS, JS, PHP, MySQL, Bootstrap
+          </p>
+          <p>
+            Sistem rumah sakit dengan fitur rekam medis digital, manajemen
+            dokter & pasien.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalProject2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+          <h5 class="fw-bold">Inventory Management System</h5>
+          <p>
+            <strong>Teknologi:</strong> HTML, CSS, JS, PHP, MySQL, Bootstrap
+          </p>
+          <p>
+            Sistem stok otomatis realtime dengan pencatatan transaksi
+            masuk/keluar barang.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalProject3" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+          <h5 class="fw-bold">E-commerce with AI Chatbot</h5>
+          <p>
+            <strong>Teknologi:</strong> Tailwind CSS, React, Node.js, AI API /
+            IBM Granite
+          </p>
+          <p>
+            E-commerce modern dengan integrasi chatbot AI untuk customer support
+            otomatis.
+          </p>
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
