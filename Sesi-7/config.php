@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "bootcamp-sesi6";
+$db   = "ecommerce";
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
