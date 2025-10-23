@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 23 Okt 2025 pada 07.15
+-- Waktu pembuatan: 23 Okt 2025 pada 08.41
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -57,19 +57,21 @@ CREATE TABLE `products` (
   `nama_produk` varchar(255) NOT NULL,
   `harga` int(11) NOT NULL,
   `deskripsi` text DEFAULT NULL,
-  `stok` int(11) NOT NULL
+  `stok` int(11) NOT NULL,
+  `gambar` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `products`
 --
 
-INSERT INTO `products` (`id`, `nama_produk`, `harga`, `deskripsi`, `stok`) VALUES
-(1, 'Laptop ASUS VivoBook', 8500000, 'Laptop ringan untuk kerja dan kuliah', 20),
-(2, 'Smartphone Samsung A15', 3500000, 'HP Android dengan kamera 50MP', 35),
-(3, 'Headset Logitech G335', 950000, 'Headset gaming ringan dan nyaman', 50),
-(4, 'Mouse Wireless Logitech M331', 250000, 'Mouse wireless hemat baterai', 60),
-(5, 'Keyboard Mechanical Rexus', 550000, 'Keyboard mechanical RGB', 40);
+INSERT INTO `products` (`id`, `nama_produk`, `harga`, `deskripsi`, `stok`, `gambar`) VALUES
+(1, 'Laptop ASUS VivoBook', 8500000, 'Laptop ringan untuk kerja dan kuliah', 20, 'https://plus.unsplash.com/premium_photo-1726876889330-b0ec9fe1ebc7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TGFwdG9wJTIwQVNVUyUyMFZpdm9Cb29rfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600'),
+(2, 'Smartphone Samsung A15', 3500000, 'HP Android dengan kamera 50MP', 35, 'https://images.unsplash.com/photo-1623950015175-ec6f6e28d183?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8U21hcnRwaG9uZSUyMFNhbXN1bmclMjBBMTV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600'),
+(3, 'Headset Logitech G335', 950000, 'Headset gaming ringan dan nyaman', 50, 'https://images.unsplash.com/photo-1640300065113-738f2abb8ba6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SGVhZHNldCUyMExvZ2l0ZWNoJTIwRzMzNXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600'),
+(4, 'Mouse Wireless Logitech M331', 250000, 'Mouse wireless hemat baterai', 60, 'https://images.unsplash.com/photo-1629083255546-92b8587eb116?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TW91c2UlMjBXaXJlbGVzcyUyMExvZ2l0ZWNoJTIwTTMzMXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600'),
+(5, 'Keyboard Mechanical Rexus', 550000, 'Keyboard mechanical RGB', 40, 'https://images.unsplash.com/photo-1648860694064-03e6d6ee87f2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8S2V5Ym9hcmQlMjBNZWNoYW5pY2FsJTIwUmV4dXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600'),
+(6, 'Baju Thanksomnia', 5000, 'T-Shirt Rozilla Black Tess', 110, 'https://media.istockphoto.com/id/1304607080/id/foto/potret-busana-detail-desainer-pria-modis.webp?a=1&b=1&s=612x612&w=0&k=20&c=5WbTj1h5gBXacamDU1XrIcgpe30m65ENL6qD5oq584o=');
 
 -- --------------------------------------------------------
 
@@ -134,7 +136,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
