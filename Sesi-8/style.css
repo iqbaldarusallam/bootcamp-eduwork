@@ -99,7 +99,7 @@ body {
 }
 
 header.bg-gradient {
-  background: linear-gradient(90deg, #007bff, #6610f2);
+  background: linear-gradient(90deg, #000000, #333333);
   color: white;
 }
 
@@ -112,7 +112,7 @@ header.bg-gradient {
 }
 
 .hero-section {
-  background: linear-gradient(90deg, #007bff, #6610f2);
+  background: linear-gradient(90deg, #000000, #333333);
   color: white;
   text-align: center;
   padding: 80px 20px;
@@ -152,7 +152,7 @@ header.bg-gradient {
 
 .category-card i {
   font-size: 2rem;
-  color: #0d6efd;
+  color: #000000;
 }
 
 .category-card h6 {

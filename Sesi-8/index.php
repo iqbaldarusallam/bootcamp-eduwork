@@ -30,18 +30,18 @@
         <li class="nav-item dropdown position-relative">
           <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="cartDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-cart-shopping me-1"></i> Cart
-            <span id="cartCount" class="cart-badge">0</span>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end cart-dropdown shadow" aria-labelledby="cartDropdown" id="cartItems">
+          <ul class="dropdown-menu dropdown-menu-end cart-dropdown shadow" aria-labelledby="cartDropdown">
             <li class="text-center text-muted small p-2">Cart is empty</li>
           </ul>
         </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-user me-1"></i> Account
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="accountDropdown">
-            <li><a class="dropdown-item disabled"><i class="fa-solid fa-user-circle me-2 text-primary"></i> Iqbal Darusallam</a></li>
+            <li><a class="dropdown-item disabled"><i class="fa-solid fa-user-circle me-2 text-dark"></i> Iqbal Darusallam</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-right-from-bracket me-2"></i> Logout</a></li>
           </ul>
@@ -51,16 +51,15 @@
   </div>
 </nav>
 
-<header class="text-center py-5 bg-gradient">
-  <h1 class="fw-bold text-black">Welcome to Lazida</h1>
-  <p class="text-black-50 mb-0">Find your dream items</p>
+<header class="text-center py-5" style="background: linear-gradient(90deg, #000, #444);">
+  <h1 class="fw-bold text-white">Elevate Your Lifestyle with Lazida</h1>
+  <p class="text-light mb-0">Premium products. Trusted brands. Exclusive offers.</p>
 </header>
 
 <div class="container my-4">
   <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 gap-3">
-    
     <div class="d-flex align-items-center gap-2">
-      <i class="fa-solid fa-filter text-primary"></i>
+      <i class="fa-solid fa-filter text-dark"></i>
       <select id="filterCategory" class="form-select shadow-sm">
         <option value="all">All Categories</option>
         <option value="Laptop">Laptop</option>
@@ -93,10 +92,10 @@
             <h5 class="card-title"><?= htmlspecialchars($row['nama_produk']) ?></h5>
             <p class="card-text text-muted flex-grow-1"><?= htmlspecialchars($row['deskripsi']) ?></p>
             <div class="d-flex justify-content-between align-items-center mt-2">
-              <span class="fw-bold text-primary">
+              <span class="fw-bold text-dark">
                 <i class="fa-solid fa-tag me-1"></i> Rp<?= number_format($row['harga'], 0, ',', '.') ?>
               </span>
-              <button class="btn btn-outline-primary btn-sm addToCart"
+              <button class="btn btn-outline-dark btn-sm addToCart"
                       data-name="<?= htmlspecialchars($row['nama_produk']) ?>"
                       data-price="<?= $row['harga'] ?>"
                       data-image="<?= htmlspecialchars($row['gambar']) ?>">
@@ -116,73 +115,19 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// --- cart script tetap sama ---
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-const cartCount = document.getElementById('cartCount');
-const cartItems = document.getElementById('cartItems');
-
-function renderCart() {
-  cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-  cartItems.innerHTML = '';
-  if (cart.length === 0) {
-    cartItems.innerHTML = '<li class="text-center text-muted small p-2">Cart is empty</li>';
-    localStorage.setItem('cart', JSON.stringify(cart));
-    return;
-  }
-  cart.forEach((item, index) => {
-    const li = document.createElement('li');
-    li.classList.add('dropdown-item', 'cart-item');
-    li.innerHTML = `
-      <img src="${item.image}" alt="${item.name}">
-      <div class="item-info">
-        <strong>${item.name}</strong>
-        <span class="text-muted">x${item.qty}</span>
-      </div>
-      <div class="text-end">
-        <span class="text-primary fw-bold small d-block">Rp${item.price.toLocaleString()}</span>
-        <button class="remove-btn btn btn-link p-0 text-danger" data-index="${index}">
-          <i class="fa-solid fa-trash-can"></i>
-        </button>
-      </div>
-    `;
-    cartItems.appendChild(li);
-  });
-  cartItems.innerHTML += `
-    <li><hr class="my-2"></li>
-    <li class="dropdown-item text-center">
-      <button class="btn btn-sm btn-primary checkout-btn w-100">Checkout</button>
-    </li>
-  `;
-  document.querySelectorAll('.remove-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const index = btn.dataset.index;
-      cart.splice(index, 1);
-      renderCart();
-    });
-  });
-  localStorage.setItem('cart', JSON.stringify(cart));
-}
-
+// --- ADD BUTTON EFFECT ONLY ---
 document.querySelectorAll('.addToCart').forEach(btn => {
   btn.addEventListener('click', () => {
-    const name = btn.dataset.name;
-    const price = parseInt(btn.dataset.price);
-    const image = btn.dataset.image;
-    const existing = cart.find(item => item.name === name);
-    if (existing) existing.qty++;
-    else cart.push({ name, price, image, qty: 1 });
-    renderCart();
-    btn.classList.replace('btn-outline-primary', 'btn-success');
+    btn.classList.replace('btn-outline-dark', 'btn-success');
     btn.innerHTML = '<i class="fa-solid fa-check me-1"></i> Added!';
     setTimeout(() => {
-      btn.classList.replace('btn-success', 'btn-outline-primary');
+      btn.classList.replace('btn-success', 'btn-outline-dark');
       btn.innerHTML = '<i class="fa-solid fa-cart-plus me-1"></i> Add';
     }, 1000);
   });
 });
 
-renderCart();
-
+// --- CATEGORY FILTER ---
 document.getElementById("filterCategory").addEventListener("change", function() {
   const category = this.value.toLowerCase();
   document.querySelectorAll(".product-card").forEach(card => {
@@ -191,6 +136,7 @@ document.getElementById("filterCategory").addEventListener("change", function() 
   });
 });
 
+// --- SEARCH FILTER ---
 document.getElementById("searchBox").addEventListener("keyup", function() {
   const keyword = this.value.toLowerCase();
   document.querySelectorAll(".product-card").forEach(card => {

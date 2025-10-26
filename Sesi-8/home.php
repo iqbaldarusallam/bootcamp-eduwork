@@ -11,16 +11,83 @@
   <style>
     .carousel-inner img {
       width: 100%;
-      height: 400px; 
+      height: 500px;
       object-fit: cover;
       object-position: center;
+      filter: brightness(45%);
+      transition: filter 0.5s ease;
+    }
+
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0);
+      border-radius: 12px;
+      padding: 30px 40px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #007bff, #6610f2);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #6610f2, #007bff);
+    }
+
+    #heroCarousel .carousel-control-prev-icon,
+    #heroCarousel .carousel-control-next-icon {
+      filter: invert(1) brightness(200%);
+    }
+
+    footer {
+      background-color: #111;
+    }
+
+    .category-card {
+      transition: all 0.1s ease;
+      border: none;
+      background-color: #fff;
+    }
+
+    .category-card .card-body {
+      transition: all 0.3s ease;
+    }
+
+    .category-card i {
+      transition: color 0.3s ease;
+    }
+
+    .category-card:hover,
+    .category-card:active {
+      background-color: #000;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .category-card:hover i,
+    .category-card:hover h6,
+    .category-card:hover a,
+    .category-card:active i,
+    .category-card:active h6,
+    .category-card:active a {
+      color: #fff !important;
+    }
+
+    .category-card a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .category-card:hover a {
+      color: #fff;
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body class="bg-light">
 
-<!-- ✅ NAVBAR -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="home.php">
@@ -48,43 +115,54 @@
   </div>
 </nav>
 
-<section class="bg-gradient-primary text-dark text-center py-5">
-  <div class="container">
-    <h1 class="fw-bold mb-3">Welcome to Lazida</h1>
-    <p class="lead mb-4">Your favorite tech store for Lazida Store</p>
-    <a href="index.php" class="btn btn-light btn-lg px-4 shadow">
-      <i class="fa-solid fa-cart-shopping me-2"></i> Start Shopping
-    </a>
-  </div>
-</section>
+<!-- Hero Carousel -->
+<section id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-inner">
 
-<section class="container py-5">
-  <div class="text-center mb-4">
-    <h2 class="fw-bold">Hot Deals & Promotions 🔥</h2>
-    <p class="text-muted">Get the best offers before they're gone!</p>
-  </div>
-
-  <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner rounded shadow" style="max-height: 400px; overflow:hidden;">
-      <div class="carousel-item active">
-        <img src="https://images.unsplash.com/photo-1546502208-81d149d52bd7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmlnJTIwc2FsZSUyMGVsZWN0cm9uaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600" class="d-block w-100">
-      </div>
-      <div class="carousel-item">
-        <img src="Banner-Carousels1.jpg" class="d-block w-100">
-      </div>
-      <div class="carousel-item">
-        <img src="Banner-Carousel2.jpg" class="d-block w-100">
+    <div class="carousel-item active">
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1920&q=80" class="d-block w-100">
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="fw-bold text-white mb-3 display-5 text-uppercase">Welcome to Lazida Store</h1>
+        <p class="lead text-white-50 mb-4">Elegant. Simple. Modern.</p>
+        <a href="index.php" class="btn btn-light btn-lg px-4 shadow rounded-pill">
+          <i class="fa-solid fa-cart-shopping me-2"></i> Shop Now
+        </a>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=1920&q=80" class="d-block w-100">
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="fw-bold text-white mb-3 display-5 text-uppercase">Premium Technology</h1>
+        <p class="lead text-white-50 mb-4">Discover the Latest Innovations</p>
+        <a href="index.php" class="btn btn-light btn-lg px-4 shadow rounded-pill">
+          <i class="fa-solid fa-cart-shopping me-2"></i> Shop Now
+        </a>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=1920&q=80" class="d-block w-100">
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="fw-bold text-white mb-3 display-5 text-uppercase">Exclusive Collection</h1>
+        <p class="lead text-white-50 mb-4">Curated for You</p>
+        <a href="index.php" class="btn btn-light btn-lg px-4 shadow rounded-pill">
+          <i class="fa-solid fa-cart-shopping me-2"></i> Shop Now
+        </a>
+      </div>
+    </div>
+
   </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
 </section>
 
+<!-- Category Section -->
 <section class="container py-5">
   <h3 class="fw-bold text-center mb-4">Shop by Category</h3>
   <div class="row text-center g-3">
@@ -99,7 +177,7 @@
       foreach ($categories as $cat):
     ?>
     <div class="col-6 col-md-4 col-lg-2 mx-auto">
-      <div class="card border-0 shadow-sm h-100">
+      <div class="card category-card shadow-sm h-100">
         <div class="card-body">
           <i class="fa-solid <?= $cat[1] ?> text-dark display-5 mb-2"></i>
           <h6><?= $cat[0] ?></h6>
@@ -111,6 +189,7 @@
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="bg-dark text-white text-center py-3">
   <p class="mb-0 small">© 2025 <strong>Lazida Store</strong></p>
 </footer>
