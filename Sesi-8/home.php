@@ -12,8 +12,8 @@
     .carousel-inner img {
       width: 100%;
       height: 400px; 
-      object-fit: cover; /* biar isi penuh tanpa distorsi */
-      object-position: center; /* fokus di tengah gambar */
+      object-fit: cover;
+      object-position: center;
     }
   </style>
 </head>
