@@ -1,9 +1,19 @@
 body {
   background-color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
 }
 
 .navbar-brand i {
   color: #ffffff;
+}
+
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: #ffffff !important;
 }
 
 .product-card img {
@@ -12,6 +22,15 @@ body {
   object-fit: cover;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+}
+
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .cart-badge {
@@ -90,4 +109,70 @@ header.bg-gradient {
 
 .search-box input {
   padding-left: 40px;
+}
+
+.hero-section {
+  background: linear-gradient(90deg, #007bff, #6610f2);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-section h1 {
+  font-weight: 700;
+}
+
+.hero-section .btn {
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.carousel-inner img {
+  border-radius: 12px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.category-card {
+  transition: all 0.3s ease;
+  border: none;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.category-card i {
+  font-size: 2rem;
+  color: #0d6efd;
+}
+
+.category-card h6 {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+footer {
+  background: #212529;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 20px;
+  }
+  .category-card i {
+    font-size: 1.5rem;
+  }
 }

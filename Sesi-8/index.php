@@ -14,7 +14,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
   <div class="container position-relative">
-    <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="home.php">
       <i class="fa-solid fa-bag-shopping me-2 text-white"></i> Lazida
     </a>
 
@@ -24,8 +24,8 @@
 
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item"><a href="#" class="nav-link active"><i class="fa-solid fa-house me-1"></i> Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-tags me-1"></i> Products</a></li>
+        <li class="nav-item"><a href="home.php" class="nav-link"><i class="fa-solid fa-house me-1"></i> Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active"><i class="fa-solid fa-tags me-1"></i> Products</a></li>
 
         <li class="nav-item dropdown position-relative">
           <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="cartDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,16 +36,24 @@
             <li class="text-center text-muted small p-2">Cart is empty</li>
           </ul>
         </li>
-
-        <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-user me-1"></i> Account</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user me-1"></i> Account
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="accountDropdown">
+            <li><a class="dropdown-item disabled"><i class="fa-solid fa-user-circle me-2 text-primary"></i> Iqbal Darusallam</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-right-from-bracket me-2"></i> Logout</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
 <header class="text-center py-5 bg-gradient">
-  <h1 class="fw-bold">Welcome to Lazida</h1>
-  <p class="text-white-50 mb-0">Find your dream gadgets with Gen Z vibes ⚡</p>
+  <h1 class="fw-bold text-black">Welcome to Lazida</h1>
+  <p class="text-black-50 mb-0">Find your dream items</p>
 </header>
 
 <div class="container my-4">
@@ -108,6 +116,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+// --- cart script tetap sama ---
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartCount = document.getElementById('cartCount');
 const cartItems = document.getElementById('cartItems');
@@ -115,13 +124,11 @@ const cartItems = document.getElementById('cartItems');
 function renderCart() {
   cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
   cartItems.innerHTML = '';
-
   if (cart.length === 0) {
     cartItems.innerHTML = '<li class="text-center text-muted small p-2">Cart is empty</li>';
     localStorage.setItem('cart', JSON.stringify(cart));
     return;
   }
-
   cart.forEach((item, index) => {
     const li = document.createElement('li');
     li.classList.add('dropdown-item', 'cart-item');
@@ -133,21 +140,19 @@ function renderCart() {
       </div>
       <div class="text-end">
         <span class="text-primary fw-bold small d-block">Rp${item.price.toLocaleString()}</span>
-        <button class="remove-btn" title="Remove" data-index="${index}">
+        <button class="remove-btn btn btn-link p-0 text-danger" data-index="${index}">
           <i class="fa-solid fa-trash-can"></i>
         </button>
       </div>
     `;
     cartItems.appendChild(li);
   });
-
   cartItems.innerHTML += `
     <li><hr class="my-2"></li>
     <li class="dropdown-item text-center">
       <button class="btn btn-sm btn-primary checkout-btn w-100">Checkout</button>
     </li>
   `;
-
   document.querySelectorAll('.remove-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const index = btn.dataset.index;
@@ -155,7 +160,6 @@ function renderCart() {
       renderCart();
     });
   });
-
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
@@ -165,12 +169,9 @@ document.querySelectorAll('.addToCart').forEach(btn => {
     const price = parseInt(btn.dataset.price);
     const image = btn.dataset.image;
     const existing = cart.find(item => item.name === name);
-
     if (existing) existing.qty++;
     else cart.push({ name, price, image, qty: 1 });
-
     renderCart();
-
     btn.classList.replace('btn-outline-primary', 'btn-success');
     btn.innerHTML = '<i class="fa-solid fa-check me-1"></i> Added!';
     setTimeout(() => {
