@@ -115,7 +115,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// --- ADD BUTTON EFFECT ONLY ---
 document.querySelectorAll('.addToCart').forEach(btn => {
   btn.addEventListener('click', () => {
     btn.classList.replace('btn-outline-dark', 'btn-success');
@@ -127,7 +126,7 @@ document.querySelectorAll('.addToCart').forEach(btn => {
   });
 });
 
-// --- CATEGORY FILTER ---
+
 document.getElementById("filterCategory").addEventListener("change", function() {
   const category = this.value.toLowerCase();
   document.querySelectorAll(".product-card").forEach(card => {
@@ -136,7 +135,6 @@ document.getElementById("filterCategory").addEventListener("change", function() 
   });
 });
 
-// --- SEARCH FILTER ---
 document.getElementById("searchBox").addEventListener("keyup", function() {
   const keyword = this.value.toLowerCase();
   document.querySelectorAll(".product-card").forEach(card => {
